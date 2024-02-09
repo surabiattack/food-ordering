@@ -27,7 +27,7 @@ export default function MenuItemsPage() {
   }
 
   return (
-    <section className="mt-8 max-w-md mx-auto">
+    <section className="mt-8 max-w-2xl mx-auto">
       <UserTabs isAdmin={data.admin} />
       <div className="mt-8">
         <Link className="button flex" href={"/menu-items/new"}>
@@ -40,15 +40,20 @@ export default function MenuItemsPage() {
         <div className="grid grid-cols-3 gap-2">
           {menuItems?.length > 0 &&
             menuItems.map((item) => (
-              <Link href={"/menu-items/edit/" + item._id} className="bg-gray-200 rounded-lg p-4">
+              <Link
+                href={"/menu-items/edit/" + item._id}
+                className="bg-gray-200 rounded-lg p-4"
+              >
                 <div className="relative">
                   <Image
                     className="rounded-md"
-                    src={item.image} alt="" width={200} height={200} />
+                    src={item.image}
+                    alt=""
+                    width={200}
+                    height={200}
+                  />
                 </div>
-                <div className="text-center">
-                  {item.name}
-                </div>
+                <div className="text-center">{item.name}</div>
               </Link>
             ))}
         </div>
